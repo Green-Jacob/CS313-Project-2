@@ -1,8 +1,9 @@
+require('dotenv').config();
 const express = require('express')
 const path = require('path')
 const { Pool } = require('pg')
 const PORT = process.env.PORT || 5000
-const connectionString = process.env.DATABASE_URL || "postgres://urumsnimhestzf:ed9d4f490a23a8e9d1474c84d366681357010b19e3ef307b7204bdb072289c0c@ec2-174-129-253-144.compute-1.amazonaws.com:5432/dfvbbt9ju2co2t?ssl=true";
+const connectionString = process.env.DATABASE_URL;
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
