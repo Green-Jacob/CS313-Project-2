@@ -22,4 +22,16 @@ express()
       console.log(result.rows);
     });
   })
+  .get('/getPerson', function(req, res){
+    const pool = new Pool({connectionString: connectionString});
+    var sql = "SELECT * FROM person";
+    pool.query(sql, function(err, result){
+      if (err) {
+        console.log("Error in query: ");
+        console.log(err);
+      }
+      console.log("Here's the thing:");
+      console.log(result.rows);
+    })
+  })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
