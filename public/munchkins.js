@@ -1,7 +1,9 @@
 $(document).ready(function(){
   $("#button").click(function(){
-    $.get("/dbConnect", function(data, status){
-      $("#response").text(data);
+    $.getJSON("/dbConnect", function(result){
+      $.each(result, function(i, field){
+        $("#response").append(field + " ");
+      });
     });
   });
 });
