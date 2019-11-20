@@ -38,7 +38,7 @@ express()
 function query(callback) {
   var id = req.query.id;
   const pool = new Pool({connectionString: connectionString});
-  var sql = "SELECT * FROM person WHERE id=" + callback;
+  var sql = "SELECT * FROM person WHERE id=" + id;
   pool.query(sql, function(err, result){
     if (err) {
       console.log("Error in query: ");
