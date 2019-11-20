@@ -23,7 +23,6 @@ express()
     });
   })
   .get('/getPerson', function(req, res){
-    const pool = new Pool({connectionString: connectionString});
     var id = req.query.id;
     var returned = getPerson(id)
   })
@@ -31,7 +30,8 @@ express()
 
 
 function getPerson(callback) {
-  var sql = "SELECT * FROM person WHERE id=" + id;
+  const pool = new Pool({connectionString: connectionString});
+  var sql = "SELECT * FROM person WHERE id=" + callback;
   pool.query(sql, function(err, result){
     if (err) {
       console.log("Error in query: ");
