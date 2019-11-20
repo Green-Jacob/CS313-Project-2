@@ -33,7 +33,7 @@ express()
       }
       console.log("Here's the thing:");
       console.log(result.rows);
-      res.json(result);
+      res.json(result.rows);
       res.end();
     })
   })
