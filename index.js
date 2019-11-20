@@ -24,12 +24,19 @@ express()
   })
   .get('/getPerson', function(req, res){
     var id = req.query.id;
-    var returned = getPerson(id)
+    var returned = function getPerson(err, data){
+      if (err) {
+        console.log("It broken");
+        console.log(err);
+      }
+      console.log(data);
+    };
+    returned(query);
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
-function getPerson(callback) {
+function query(callback) {
   const pool = new Pool({connectionString: connectionString});
   var sql = "SELECT * FROM person WHERE id=" + callback;
   pool.query(sql, function(err, result){
