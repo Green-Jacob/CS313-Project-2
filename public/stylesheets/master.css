@@ -1,0 +1,145 @@
+@@media only screen and(max-width:600px) {
+  .container{
+    flex-direction:column;
+  }
+}
+/* the flex container for the pages */
+.flex-container{
+  border: 2px groove black;
+  border-radius:5px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  width:auto;
+  background-image:linear-gradient(to bottom right,#3399ff,#8399ff);
+  font-family: 'ZCOOL XiaoWei', serif;/* default font for the site */
+}
+header{
+  border: 3px groove #001a33;
+  border-radius:5px;
+  width:100%;
+  text-align:center;
+  font-family: 'ZCOOL XiaoWei', serif;
+  font-size:1.5em;
+  text-shadow:3px 2px rgb(0, 153, 0, 0.5);
+  color:#001a33;
+  padding:.5rem;
+  margin:.75em;
+}
+input[type=submit]{
+  margin:.5rem;
+  border-radius:3px;
+}
+input[type=text]{
+  border-radius:3px;
+}
+input[type=number]{
+  border-radius:3px;
+}
+input[type=select]{
+  width:auto;
+}
+button{
+  max-height:100px;
+}
+footer{
+  width:80%;
+  border: 3px groove #0080ff;
+  border-radius:5px;
+  padding:.3rem;
+  margin:.8em;
+}
+h1{
+  font-size:3em;
+}
+h2{
+  width:100%;
+}
+.bordered{
+  border: 5px groove #001a33;
+  border-radius: 5px;
+}
+.sidebar{
+  display:flex;
+  justify-content: space-around;
+  border: 3px groove #9999ff;
+  border-radius:5px;
+  width:100%;
+  background-color:rgba(230, 242, 255, 0.5);
+  padding:.5rem;
+  margin:.75em;
+}
+/* dropdown menu */
+.dropdown{
+  position:relative;
+  display:inline-block;
+  border: 2px solid black;
+  border-radius:3px;
+  background-color:rgba(230, 242, 255, 0.5);
+  padding:.5rem;
+}
+.dropdown-list{
+  display:none;
+  position:absolute;
+  min-width:150px;
+  background-color:white;
+  border:2px groove black;
+  border-radius:2px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+  z-index:1;
+  padding:.5rem;
+}
+.dropdown:hover .dropdown-list{
+  display:block;
+}
+.box-small{
+  width:45%;
+  background-color:rgba(202, 129, 255, 0.5);
+  border: 3px groove #9999ff;
+  border-radius:5px;
+  padding:.2rem;
+  margin:2em;
+}
+.box-inner{
+  width:15%;
+  background-color:rgba(202, 129, 255, 0.5);
+  border: 3px groove #9999ff;
+  border-radius:5px;
+  padding:.2rem;
+  margin:2em;
+  font-size:1em;
+}
+.box-large{
+  display:flex;
+  flex-wrap:wrap;
+  width:80%;
+  background-color:rgba(202, 129, 255, 0.5);
+  border: 3px groove #9999ff;
+  border-radius:5px;
+  padding:.3rem;
+  margin:.8em;
+}
+.font-large{
+  font-size:3em;
+}
+.font-turretroad{
+  font-family: 'Turret Road', cursive;
+}
+.font-yanone{
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size:1.6rem;
+}
+.text-center{
+  text-align:center;
+}
+#logo{
+  margin:.3rem;
+  width:100px;
+  height:100px;
+  float:left;
+  border:2px solid #9999ff;
+  border-radius:5px;
+}
+#green-text{
+  color:green;
+}
