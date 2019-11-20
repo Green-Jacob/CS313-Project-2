@@ -12,7 +12,7 @@ express()
   .get('/', (req, res) => res.render('pages/index'))
   .get('/dbConnect', function(req, res){
     const pool = new Pool({connectionString: connectionString});
-    var sql = "Select * FROM test_table";
+    var sql = "Select * FROM players";
     pool.query(sql, function(err, result) {
       if (err) {
         console.log("Error in query: ");
@@ -20,32 +20,9 @@ express()
       }
       console.log("Back from DB with result:");
       console.log(result.rows);
+      res.json(result.rows);
+      res.end();
     });
   })
-  .get('/getPerson', function(req, res){
-    var returned = function getPerson(err, data){
-      if (err) {
-        console.log("It broken");
-        console.log(err);
-      }
-      console.log(data);
-    };
-    returned(query);
-  })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
-
-
-function query(callback) {
-  var id = req.query.id;
-  const pool = new Pool({connectionString: connectionString});
-  var sql = "SELECT * FROM person WHERE id=" + id;
-  pool.query(sql, function(err, result){
-    if (err) {
-      console.log("Error in query: ");
-      console.log(err);
-    }
-    console.log("Here's the thing:");
-    console.log(result.rows);
-    callback(null, result.rows);
-  })
 }
