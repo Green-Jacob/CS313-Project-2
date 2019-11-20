@@ -25,16 +25,20 @@ express()
   .get('/getPerson', function(req, res){
     const pool = new Pool({connectionString: connectionString});
     var id = req.query.id;
-    var sql = "SELECT * FROM person WHERE id=" + id;
-    pool.query(sql, function(err, result){
-      if (err) {
-        console.log("Error in query: ");
-        console.log(err);
-      }
-      console.log("Here's the thing:");
-      console.log(result.rows);
-      res.json(result.rows);
-      res.end();
-    })
+    var returned = getPerson(id)
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
+
+function getPerson(callback) {
+  var sql = "SELECT * FROM person WHERE id=" + id;
+  pool.query(sql, function(err, result){
+    if (err) {
+      console.log("Error in query: ");
+      console.log(err);
+    }
+    console.log("Here's the thing:");
+    console.log(result.rows);
+    callback(result.rows);
+  })
+}
