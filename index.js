@@ -46,6 +46,6 @@ function query(callback) {
     }
     console.log("Here's the thing:");
     console.log(result.rows);
-    callback(result.rows);
+    callback(null, result.rows);
   })
 }
