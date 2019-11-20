@@ -23,7 +23,6 @@ express()
     });
   })
   .get('/getPerson', function(req, res){
-    var id = req.query.id;
     var returned = function getPerson(err, data){
       if (err) {
         console.log("It broken");
@@ -37,6 +36,7 @@ express()
 
 
 function query(callback) {
+  var id = req.query.id;
   const pool = new Pool({connectionString: connectionString});
   var sql = "SELECT * FROM person WHERE id=" + callback;
   pool.query(sql, function(err, result){
