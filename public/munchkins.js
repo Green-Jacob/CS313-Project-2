@@ -1,8 +1,7 @@
 $(document).ready(function(){
   $("#button").click(function(){
-    $('#response').text(" ");
+    $("#response").html("<table class='table table-bordered'>");
     $.getJSON("/dbConnect", function(result){
-      $("#response").append("<table class='table table-bordered'>");
       $.each(result, function(i, field){
         $("#response").append("<tr>");
         $("#response").append("<td>Name: " + field.name + "</td>");
