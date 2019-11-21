@@ -13,6 +13,7 @@
   width:auto;
   background-image:linear-gradient(to bottom right,#3399ff,#8399ff);
   font-family: 'Indie Flower', cursive;/* default font for the site */
+  letter-spacing:2px;
 }
 table{
   font-family: 'Indie Flower', cursive;
