@@ -14,6 +14,9 @@
   background-image:linear-gradient(to bottom right,#3399ff,#8399ff);
   font-family: 'ZCOOL XiaoWei', serif;/* default font for the site */
 }
+body{
+  font-family: 'Indie Flower', cursive;
+}
 header{
   border: 3px groove #001a33;
   border-radius:5px;
