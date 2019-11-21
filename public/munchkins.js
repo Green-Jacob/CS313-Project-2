@@ -3,14 +3,12 @@ $(document).ready(function(){
     $("#response").html("<table class='table table-bordered'>");
     $.getJSON("/dbConnect", function(result){
       $.each(result, function(i, field){
-        $("#response").append("<tr>");
-        $("#response").append("<td>Name: " + field.name + "</td>");
-        $("#response").append("<td>Gender:" + field.gender + "</td>");
-        $("#response").append("<td>Level: " + field.level + "</td>");
-        $("#response").append("<td>Equipment:" + field.equipment + "</td>");
-        $("#response").append("</tr>");
+        var resp = "<tr><td>Name: " + field.name + "</td>" + "<td>Gender:" + field.gender + "</td>";
+        resp = resp + "<td>Level: " + field.level + "</td>" + "<td>Equipment:" + field.equipment + "</td>";
+        resp = resp + "</tr>";
+        $("#response").append(resp);
       });
+      $("#response").append("</table>");
     });
-    $("#response").append("</table>");
   });
 });
