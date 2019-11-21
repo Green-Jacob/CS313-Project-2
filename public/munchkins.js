@@ -10,7 +10,7 @@ $(document).ready(function(){
         $("#response").append("<td>Equipment:" + field.equipment + "</td>");
         $("#response").append("</tr>");
       });
-      $("#response").append("</table>");
     });
+    $("#response").append("</table>");
   });
 });
