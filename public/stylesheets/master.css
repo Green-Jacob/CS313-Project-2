@@ -12,17 +12,18 @@
   align-items:center;
   width:auto;
   background-image:linear-gradient(to bottom right,#3399ff,#8399ff);
-  font-family: 'ZCOOL XiaoWei', serif;/* default font for the site */
+  font-family: 'Indie Flower', cursive;/* default font for the site */
 }
 table{
   font-family: 'Indie Flower', cursive;
+  font-weight: bold;
 }
 header{
   border: 3px groove #001a33;
   border-radius:5px;
   width:100%;
   text-align:center;
-  font-family: 'ZCOOL XiaoWei', serif;
+  font-family: 'Indie Flower', cursive;
   font-size:1.5em;
   text-shadow:3px 2px rgb(0, 153, 0, 0.5);
   color:#001a33;
