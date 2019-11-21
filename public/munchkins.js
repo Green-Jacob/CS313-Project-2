@@ -5,10 +5,11 @@ $(document).ready(function(){
       $("#response").append("<table>");
       $.each(result, function(i, field){
         $("#response").append("<tr>");
-        $("#response").append("<th>Name: " + field.name + "</th>");
-        $("#response").append("<th>Gender:" + field.gender + "</th>");
-        $("#response").append("<th>Level: " + field.level + "</th>");
-        $("#response").append("<th>Equipment:" + field.equipment + "</th>");
+        $("#response").append("<td>Name: " + field.name + "</td>");
+        $("#response").append("<td>Gender:" + field.gender + "</td>");
+        $("#response").append("<td>Level: " + field.level + "</td>");
+        $("#response").append("<td>Equipment:" + field.equipment + "</td>");
+        $("#response").append("</tr>");
       });
       $("#response").append("</table>");
     });
