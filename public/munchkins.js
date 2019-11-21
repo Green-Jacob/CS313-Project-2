@@ -7,8 +7,9 @@ $(document).ready(function(){
         resp = resp + "<td>Level: " + field.level + "</td>" + "<td>Equipment:" + field.equipment + "</td>";
         resp = resp + "</tr>";
         $("#response").append(resp);
-      });
+      }
       $("#response").append("</table>");
+      );
     });
   });
 });
