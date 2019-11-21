@@ -2,7 +2,7 @@ $(document).ready(function(){
   $("#button").click(function(){
     $('#response').text(" ");
     $.getJSON("/dbConnect", function(result){
-      $("#response").append("<table>");
+      $("#response").append("<table class='table table-bordered'>");
       $.each(result, function(i, field){
         $("#response").append("<tr>");
         $("#response").append("<td>Name: " + field.name + "</td>");
