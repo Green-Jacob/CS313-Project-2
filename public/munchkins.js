@@ -3,11 +3,7 @@ $(document).ready(function(){
     $.getPlayers();
   });
   $("#add-player").click(function(){
-    let i = $.addPlayer();
-    if (i) {
-      $.getPlayers();
-    }
-  });
+    $.addPlayer();
 });
 //retrieves rows from the database and displays it in a table
 $.getPlayers = function(){
@@ -33,6 +29,6 @@ $.addPlayer = function(){
   var url = "/addPlayer?name=" + name + "&" + "gender=" + gender;
   $.get(url, function(result){
     console.log(result);
-    return Boolean(result);
   });
+  alert("Player " + name + "added. Please load players.");
 };
