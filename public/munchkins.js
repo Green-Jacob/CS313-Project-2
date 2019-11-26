@@ -5,6 +5,7 @@ $(document).ready(function(){
 
 //gets all rows from database and loads it into the table.
 function getPlayers(){
+  $(document).ready(function(){
   $("#response").html("<table class='table table-bordered'>");
   $.getJSON("/dbConnect", function(result){
     $.each(result, function(i, field){
@@ -17,4 +18,5 @@ function getPlayers(){
     });
   });
 $("#response").append("</table>");
+});
 }
