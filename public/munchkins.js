@@ -8,10 +8,10 @@ $(document).ready(function(){
     }
   });
 });
-$(document).on('change', 'select', function(){
+.change(function(){
   $(document).ready(function(){
     $(".remove").click(function(){
-      var id = Number(this.id);
+      var id = this.id;
       console.log(id);
       $.removePlayer(id);
     });
