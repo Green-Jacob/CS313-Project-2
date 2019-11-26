@@ -31,4 +31,4 @@ $.addPlayer = function(){
     console.log(result);
     return Boolean(result);
   });
-};
+}
