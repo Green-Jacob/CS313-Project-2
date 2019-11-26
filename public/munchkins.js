@@ -1,10 +1,10 @@
 $(document).ready(function(){
   $("#get-players").click(function(){
-    getPlayers();
+    $.getPlayers();
 });
 
 //gets all rows from database and loads it into the table.
-function getPlayers(){
+$.getPlayers = function(){
   $(document).ready(function(){
     $("#response").html("<table class='table table-bordered'>");
     $.getJSON("/dbConnect", function(result){
