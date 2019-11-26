@@ -9,12 +9,10 @@ $(document).ready(function(){
   });
 });
 $(document).change(function(){
-  $(document).ready(function(){
-    $(".remove").click(function(){
-      var id = this.id;
-      console.log(id);
-      $.removePlayer(id);
-    });
+  $(".remove").click(function(){
+    var id = this.id;
+    console.log(id);
+    $.removePlayer(id);
   });
 });
 //retrieves rows from the database and displays it in a table
