@@ -3,9 +3,7 @@ $(document).ready(function(){
     $.getPlayers();
   });
   $("#add-player").click(function(){
-    if ($.addPlayer()) {
-      $.getPlayers();
-    }
+    $.addPlayer($.getPlayers());
   });
 });
 //retrieves rows from the database and displays it in a table
@@ -30,7 +28,5 @@ $.addPlayer = function(){
   var gender = $("input[type='radio'][name = 'gender']:checked").val();
   console.log(gender);
   var url = "/addPlayer?name=" + name + "&" + "gender=" + gender;
-  $.get(url, function(result){
-    return result;
-  });
+  $.get(url, function(result){});
 };
