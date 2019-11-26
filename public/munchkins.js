@@ -32,7 +32,8 @@ $.addPlayer = function(){
   console.log(gender);
   var url = "/addPlayer?name=" + name + "&" + "gender=" + gender;
   $.get(url, function(result){
-    i = result;
+    console.log(result);
+    i = Boolean(result);
   });
   return i;
 };
