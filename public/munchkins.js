@@ -29,6 +29,6 @@ $.addPlayer = function(){
   var url = "/addPlayer?name=" + name + "&" + "gender=" + gender;
   $.get(url, function(result){
     console.log(result);
-    alert("Player " + name + "added. Please load players.")
+    alert("Player " + name + "added. Please load players.");
   });
 };
