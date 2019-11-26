@@ -35,7 +35,9 @@ express()
       if (err) {
         console.log("Error in query: ");
         console.log(err);
+        res.send(false);
       }
+      res.send(true);
     });
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
