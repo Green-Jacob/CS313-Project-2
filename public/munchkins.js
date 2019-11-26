@@ -29,5 +29,6 @@ $.addPlayer = function(){
   var url = "/addPlayer?name=" + name + "&" + "gender=" + gender;
   $.get(url, function(result){
     console.log(result);
+    return Boolean(result);
   });
 };
