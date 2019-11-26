@@ -7,7 +7,7 @@ $(document).ready(function(){
       $.getPlayers();
     }
   });
-  $(".remove-player").click(function(){
+  $("[class='remove-player']").click(function(){
     var id = this.id;
     console.log(id);
     $.removePlayer(id);
