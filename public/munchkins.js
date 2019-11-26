@@ -30,5 +30,5 @@ $.addPlayer = function(){
   $.get(url, function(result){
     console.log(result);
   });
-  alert("Player " + name + "added. Please load players.");
+  alert("Player " + name + "added. Please load players.")
 };
