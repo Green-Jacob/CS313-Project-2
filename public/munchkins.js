@@ -9,6 +9,7 @@ $(document).ready(function(){
   });
   $(".remove-player").click(function(){
     var id = this.id;
+    console.log(id);
     $.removePlayer(id);
   })
 });
@@ -44,5 +45,4 @@ $.addPlayer = function(){
 };
 
 $.removePlayer = function(id){
-  console.log(id);
 };
