@@ -7,7 +7,7 @@ $(document).ready(function(){
       $.getPlayers();
     }
   });
-  $("[class='remove-player']").click(function(){
+  $("[class='remove']").click(function(){
     var id = this.id;
     console.log(id);
     $.removePlayer(id);
@@ -21,7 +21,7 @@ $.getPlayers = function(){
       var resp = "<tr><td>Name: " + field.name + "</td>";
       resp = resp + "<td>Gender:" + field.gender + "</td>";
       resp = resp + "<td>Level: " + field.level + "</td>" + "<td>Equipment:" + field.equipment + "</td>";
-      resp = resp + '<td><button type="button" name="button" class="remove-player" id="' + field.id + '">Remove Player</button></td>';
+      resp = resp + '<td><button type="button" name="button" class="remove" id="' + field.id + '">Remove Player</button></td>';
       resp = resp + "</tr>";
       $("#response").append(resp);
     });
