@@ -3,7 +3,10 @@ $(document).ready(function(){
     $.getPlayers();
   });
   $("#add-player").click(function(){
-    $.addPlayer();
+    if ($.addPlayer()) {
+      $.getPlayers();
+    }
+  });
 });
 //retrieves rows from the database and displays it in a table
 $.getPlayers = function(){
@@ -22,6 +25,7 @@ $.getPlayers = function(){
 };
 //adds player to the database
 $.addPlayer = function(){
+  var i = false;
   var name = $("#name").val();
   console.log(name);
   var gender = $("input[type='radio'][name = 'gender']:checked").val();
@@ -29,6 +33,8 @@ $.addPlayer = function(){
   var url = "/addPlayer?name=" + name + "&" + "gender=" + gender;
   $.get(url, function(result){
     console.log(result);
-    return Boolean(result);
+    i = Boolean(result);
+    return i;
   });
-}
+  alert("Player " + name + "added. Please load players.");
+};
