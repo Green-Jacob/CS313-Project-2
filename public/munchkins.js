@@ -4,6 +4,7 @@ $(document).ready(function(){
   });
   $("#add-player").click(function(){
     $.addPlayer();
+    $.getPlayers();
   });
 });
 //retrieves rows from the database and displays it in a table
