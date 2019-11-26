@@ -1,7 +1,10 @@
 $(document).ready(function(){
   $("#get-players").click(function(){
     $.getPlayers();
-});
+  });
+  $("#add-player").click(function(){
+    $.addPlayer();
+  });
 });
 //retrieves rows from the database and displays it in a table
 $.getPlayers = function(){
@@ -17,4 +20,10 @@ $.getPlayers = function(){
     });
   });
   $("#response").append("</table>");
+};
+//adds player to the database
+$.addPlayer = function(){
+  var name = $("#name").val();
+  console.log(name);
+  )
 };
