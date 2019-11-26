@@ -3,7 +3,7 @@ $(document).ready(function(){
     $.getPlayers();
 });
 });
-
+//retrieves rows from the database and displays it in a table
 $.getPlayers = function(){
   $("#response").html("<table class='table table-bordered'>");
   $.getJSON("/dbConnect", function(result){
