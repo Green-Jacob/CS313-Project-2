@@ -7,11 +7,13 @@ $(document).ready(function(){
       $.getPlayers();
     }
   });
+});
+$(document).on('change', 'select', function(){
   $("[class='remove']").click(function(){
     var id = this.id;
     console.log(id);
     $.removePlayer(id);
-  })
+  });
 });
 //retrieves rows from the database and displays it in a table
 $.getPlayers = function(){
