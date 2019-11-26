@@ -34,6 +34,6 @@ $.addPlayer = function(){
   $.get(url, function(result){
     console.log(result);
     i = Boolean(result);
+    return i;
   });
-  return i;
 };
