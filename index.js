@@ -24,4 +24,16 @@ express()
       res.end();
     });
   })
+  .get('/addPlayer', function(req, res){
+    var name = req.query.name;
+    var gender = req.query.gender;
+    const pool = new Pool({connectionString: connectionString});
+    var sql = "INSERT INTO players(name, gender) VALUES('" + name + "','" + gender +"')";
+    pool.query(sql, function(err, result) {
+      if (err) {
+        console.log("Error in query: ");
+        console.log(err);
+      }
+    });
+  })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
