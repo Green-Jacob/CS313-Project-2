@@ -9,7 +9,7 @@ $(document).ready(function(){
   });
 });
 $(document).on('change', 'select', function(){
-  $("[class='remove']").click(function(){
+  $(".remove").click(function(){
     var id = Number(this.id);
     console.log(id);
     $.removePlayer(id);
