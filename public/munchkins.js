@@ -25,5 +25,4 @@ $.getPlayers = function(){
 $.addPlayer = function(){
   var name = $("#name").val();
   console.log(name);
-  )
 };
