@@ -25,4 +25,6 @@ $.getPlayers = function(){
 $.addPlayer = function(){
   var name = $("#name").val();
   console.log(name);
+  var gender = $("input[type='radio'][name = 'gender']:checked").val();
+  console.log(gender);
 };
