@@ -8,7 +8,7 @@ $(document).ready(function(){
     }
   });
 });
-.change(function(){
+$(document).change(function(){
   $(document).ready(function(){
     $(".remove").click(function(){
       var id = this.id;
