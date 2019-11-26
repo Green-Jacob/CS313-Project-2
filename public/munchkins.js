@@ -4,7 +4,7 @@ $(document).ready(function(){
 });
 
 //gets all rows from database and loads it into the table.
-$.getPlayers = function(){
+$.getPlayers = function() {
   $(document).ready(function(){
     $("#response").html("<table class='table table-bordered'>");
     $.getJSON("/dbConnect", function(result){
