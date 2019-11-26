@@ -27,4 +27,6 @@ $.addPlayer = function(){
   console.log(name);
   var gender = $("input[type='radio'][name = 'gender']:checked").val();
   console.log(gender);
+  var url = "/addPlayer?name=" + name + "&" + "gender=" + gender;
+  $.get(url);
 };
