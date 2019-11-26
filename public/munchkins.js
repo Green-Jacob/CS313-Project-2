@@ -7,6 +7,10 @@ $(document).ready(function(){
       $.getPlayers();
     }
   });
+  $(".remove-player").click(function(){
+    var id = this.id;
+    $.removePlayer(id);
+  })
 });
 //retrieves rows from the database and displays it in a table
 $.getPlayers = function(){
@@ -37,4 +41,8 @@ $.addPlayer = function(){
     return i;
   });
   alert("Player " + name + "added. Please load players.");
+};
+
+$.removePlayer = function(id){
+  console.log(id);
 };
