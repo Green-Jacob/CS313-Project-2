@@ -19,4 +19,5 @@ $.getPlayers = function(){
     });
     $("#response").append("</table>");
     });
+  });
 }
