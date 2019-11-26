@@ -26,7 +26,6 @@ $.getPlayers = function(){
 };
 //adds player to the database
 $.addPlayer = function(){
-  var i = false;
   var name = $("#name").val();
   console.log(name);
   var gender = $("input[type='radio'][name = 'gender']:checked").val();
@@ -34,7 +33,6 @@ $.addPlayer = function(){
   var url = "/addPlayer?name=" + name + "&" + "gender=" + gender;
   $.get(url, function(result){
     console.log(result);
-    i = Boolean(result);
-    return i;
+    return Boolean(result);
   });
 };
