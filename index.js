@@ -40,4 +40,18 @@ express()
       res.send(true);
     });
   })
+  .get('/removePlayer', function(req, res){
+    var id = req.query.id;
+    console.log("ID: " + id);
+    const pool = new Pool({connectionString: connectionString});
+    var sql = "DELETE FROM players WHERE id='" + id + "'";
+    pool.query(sql, function(err, result) {
+      if (err) {
+        console.log("Error in query: ");
+        console.log(err);
+        res.send(false);
+      }
+      res.send(true);
+    });
+  })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
