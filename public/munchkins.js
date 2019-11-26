@@ -3,7 +3,8 @@ $(document).ready(function(){
     $.getPlayers();
   });
   $("#add-player").click(function(){
-    if ($.addPlayer()) {
+    let i = $.addPlayer();
+    if (i) {
       $.getPlayers();
     }
   });
