@@ -3,8 +3,9 @@ $(document).ready(function(){
     $.getPlayers();
   });
   $("#add-player").click(function(){
-    $.addPlayer();
-    $.getPlayers();
+    if ($.addPlayer()) {
+      $.getPlayers();
+    }
   });
 });
 //retrieves rows from the database and displays it in a table
@@ -30,4 +31,5 @@ $.addPlayer = function(){
   console.log(gender);
   var url = "/addPlayer?name=" + name + "&" + "gender=" + gender;
   $.get(url);
+  return true;
 };
