@@ -3,9 +3,7 @@ $(document).ready(function(){
     $.getPlayers();
   });
   $("#add-player").click(function(){
-    if ($.addPlayer()) {
-      $.getPlayers();
-    }
+    $.addPlayer();
   });
 });
 //retrieves rows from the database and displays it in a table
@@ -37,7 +35,6 @@ $.addPlayer = function(){
     console.log(result);
     i = Boolean(result);
     $.getPlayers();
-    remove();
     return i;
   });
   //alert("Player " + name + "added. Please load players.");
