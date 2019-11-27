@@ -37,7 +37,6 @@ $.addPlayer = function(){
     i = Boolean(result);
     $.getPlayers();
     remove();
-    });
     return i;
   });
   //alert("Player " + name + "added. Please load players.");
