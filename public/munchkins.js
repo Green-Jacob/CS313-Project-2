@@ -23,7 +23,7 @@ $.getPlayers = function(){
       var resp = "<tr><td>Name: " + field.name + "</td>";
       resp = resp + "<td>Gender:" + field.gender + "</td>";
       resp = resp + "<td>Level: " + field.level + "</td>" + "<td>Equipment:" + field.equipment + "</td>";
-      resp = resp + '<td><button type="button" name="button" class="remove" id="' + field.id + '">Remove Player</button></td>';
+      resp = resp + '<td><button type="button" name="button" class="remove" value="' + field.id + '" onclick="remove()">Remove Player</button></td>';
       resp = resp + "</tr>";
       $("#response").append(resp);
     });
@@ -46,5 +46,8 @@ $.addPlayer = function(){
   alert("Player " + name + "added. Please load players.");
 };
 
-$.removePlayer = function(id){
-};
+function remove() {
+  $(".remove").click(function(){
+    console.log(this.value);
+  });
+}
