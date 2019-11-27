@@ -9,11 +9,7 @@ $(document).ready(function(){
   });
 });
 $(document).change(function(){
-  $(".remove").click(function(){
-    var id = this.id;
-    console.log(id);
-    $.removePlayer(id);
-  });
+  remove();
 });
 //retrieves rows from the database and displays it in a table
 $.getPlayers = function(){
