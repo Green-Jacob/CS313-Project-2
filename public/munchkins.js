@@ -42,7 +42,6 @@ $.addPlayer = function(){
     console.log(result);
     i = Boolean(result);
     $.getPlayers();
-    remove();
     return i;
   });
   //alert("Player " + name + "added. Please load players.");
@@ -56,6 +55,7 @@ function remove() {
     console.log(url);
     $.get(url, function(result){
       console.log(result);
+      $.getPlayers();
     })
   });
 };
