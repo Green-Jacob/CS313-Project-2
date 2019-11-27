@@ -17,6 +17,7 @@ $(document).change(function(){
 });
 //retrieves rows from the database and displays it in a table
 $.getPlayers = function(){
+  $("#response").empty();
   $("#response").html("<table class='table table-bordered'>");
   $.getJSON("/dbConnect", function(result){
     $.each(result, function(i, field){
