@@ -41,11 +41,11 @@ $.addPlayer = function(){
   $.get(url, function(result){
     console.log(result);
     i = Boolean(result);
+    $.getPlayers();
+    remove();
     return i;
   });
   //alert("Player " + name + "added. Please load players.");
-  $.getPlayers();
-  remove();
 };
 
 function remove() {
