@@ -36,8 +36,7 @@ $.addPlayer = function(){
     console.log(result);
     i = Boolean(result);
     $.getPlayers();
-    $(document).change(function(){
-      remove();
+    remove();
     });
     return i;
   });
@@ -45,14 +44,16 @@ $.addPlayer = function(){
 };
 
 function remove() {
-  $("[name='remove']").click(function(){
-    var id = this.value;
-    console.log(this.value);
-    url = "/removePlayer?id=" + id;
-    console.log(url);
-    $.get(url, function(result){
-      console.log(result);
-      $.getPlayers();
-    })
+  $("document").ready(function(){
+    $("[name='remove']").click(function(){
+      var id = this.value;
+      console.log(this.value);
+      url = "/removePlayer?id=" + id;
+      console.log(url);
+      $.get(url, function(result){
+        console.log(result);
+        $.getPlayers();
+      })
+    });
   });
 };
