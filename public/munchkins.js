@@ -43,7 +43,9 @@ $.addPlayer = function(){
     i = Boolean(result);
     return i;
   });
-  alert("Player " + name + "added. Please load players.");
+  //alert("Player " + name + "added. Please load players.");
+  $.getPlayers();
+  remove();
 };
 
 function remove() {
