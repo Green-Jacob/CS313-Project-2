@@ -9,7 +9,16 @@ $(document).ready(function(){
   });
 });
 $(document).change(function(){
-  remove();
+  $("[name='remove']").click(function(){
+    var id = this.value;
+    console.log(this.value);
+    url = "/removePlayer?id=" + id;
+    console.log(url);
+    $.get(url, function(result){
+      console.log(result);
+      $.getPlayers();
+    })
+  });
 });
 //retrieves rows from the database and displays it in a table
 $.getPlayers = function(){
@@ -45,14 +54,4 @@ $.addPlayer = function(){
 };
 
 function remove() {
-  $("[name='remove']").click(function(){
-    var id = this.value;
-    console.log(this.value);
-    url = "/removePlayer?id=" + id;
-    console.log(url);
-    $.get(url, function(result){
-      console.log(result);
-      $.getPlayers();
-    })
-  });
 };
