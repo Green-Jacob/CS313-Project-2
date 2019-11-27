@@ -8,20 +8,6 @@ $(document).ready(function(){
     }
   });
 });
-$(document).change(function(){
-  $(document).ready(function(){
-    $("[name='remove']").click(function(){
-      var id = this.value;
-      console.log(this.value);
-      url = "/removePlayer?id=" + id;
-      console.log(url);
-      $.get(url, function(result){
-        console.log(result);
-        $.getPlayers();
-      })
-    });
-  });
-});
 //retrieves rows from the database and displays it in a table
 $.getPlayers = function(){
   $("#response").empty();
@@ -50,10 +36,23 @@ $.addPlayer = function(){
     console.log(result);
     i = Boolean(result);
     $.getPlayers();
+    $(document).ready(function(){
+      remove();
+    });
     return i;
   });
   //alert("Player " + name + "added. Please load players.");
 };
 
 function remove() {
+  $("[name='remove']").click(function(){
+    var id = this.value;
+    console.log(this.value);
+    url = "/removePlayer?id=" + id;
+    console.log(url);
+    $.get(url, function(result){
+      console.log(result);
+      $.getPlayers();
+    })
+  });
 };
