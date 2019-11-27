@@ -36,7 +36,7 @@ $.addPlayer = function(){
     console.log(result);
     i = Boolean(result);
     $.getPlayers();
-    $(document).ready(function(){
+    $(document).change(function(){
       remove();
     });
     return i;
