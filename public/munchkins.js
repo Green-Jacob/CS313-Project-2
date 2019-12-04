@@ -39,6 +39,12 @@ $(document).ready(function(){
     console.log("Equip-down " + action + " " + id + " " + equip);
     updateEquipment(action, id, equip);
   });
+  $("table").on("click", "[name='gender-swap']",function(event){
+    let id = $(this).attr('id');
+    let gender = $(this).val();
+    console.log("Gender-swap " + id + " " + gender);
+    updateGender(id, gender);
+  });
 });
 /**
 retrieves rows from the database and displays it in a table
@@ -158,6 +164,28 @@ function updateEquipment(action, id, equip){
   }
   console.log("New Equipment: " + equip);
   var url = "/updateEquipment?id=" + id + "&newEquipment=" + equip;
+  $.get(url, function(result){
+    console.log(result);
+    $.getPlayers();
+  })
+};
+/**
+Updates the players gender
+**/
+function updateGender(id, gender){
+  if (id == undefined || gender == undefined) {
+    console.log("Attempted gender swap with undefined value");
+    return;
+  }
+  switch (gender) {
+    case "Male":
+      gender = "Female";
+      break;
+    case "Female":
+      gender = "Male";
+      break;
+  }
+  var url = "/updateGender?id=" + id + "&newGender=" + gender;
   $.get(url, function(result){
     console.log(result);
     $.getPlayers();

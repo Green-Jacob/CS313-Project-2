@@ -86,4 +86,20 @@ express()
       res.send(true);
     })
   })
+  .get('/updateGender', function(req, res){
+    var id = req.query.id;
+    var newGender = req.query.newGender;
+    console.log(id + newGender);
+    const pool = new Pool({connectionString: connectionString});
+    var sql = "UPDATE players SET gender = '" + newGender + "' WHERE id = " + id;
+    console.log("Update Gender SQL: " + sql);
+    pool.query(sql, function(err, result){
+      if (err) {
+        console.log("Error in query: ");
+        console.log(err);
+        res.send(false);
+      }
+      res.send(true);
+    })
+  })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
