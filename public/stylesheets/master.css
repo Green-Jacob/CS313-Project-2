@@ -11,7 +11,7 @@
   flex-wrap:wrap;
   align-items:center;
   width:auto;
-  background-image:linear-gradient(to bottom right,#3399ff,#8399ff);
+  background-image:linear-gradient(to bottom right,#ffe6cc,#ffa64d);
   font-family: 'Gochi Hand', cursive;
   letter-spacing:2px;
 }
@@ -20,6 +20,9 @@ table{
   font-weight: bold;
   font-size:1.5em;
 }
+table, th, td, tr{
+  border: 3px groove lightblue;
+}
 header{
   border: 3px groove #001a33;
   border-radius:5px;
@@ -27,7 +30,7 @@ header{
   text-align:center;
   font-family: 'Permanent Marker', cursive;
   font-size:1.5em;
-  text-shadow:3px 2px rgb(0, 153, 0, 0.5);
+  text-shadow:3px 2px rgb(102, 102, 153, 0.5);
   color:#001a33;
   padding:.5rem;
   margin:.75em;
@@ -134,7 +137,7 @@ td{
   display:flex;
   flex-wrap:wrap;
   width:100%;
-  background-color:rgba(202, 129, 255, 0.5);
+  background-color:rgba(204, 255, 235, 0.5);
   border: 3px groove #9999ff;
   border-radius:5px;
   padding:.3rem;

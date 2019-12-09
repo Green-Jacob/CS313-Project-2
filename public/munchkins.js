@@ -54,7 +54,7 @@ $.getPlayers = function(){
   //$("#response").empty();
   $("#alert").show(5);
   $.getJSON("/dbConnect", function(result){
-    $("#response").html("<table class='table table-bordered'>");
+    $("#response").html("<table class='table'>");
     $.each(result, function(i, field){
       let lvlU = levelUpButton(field.level, field.id);
       let lvlD = levelDownButton(field.level, field.id);
