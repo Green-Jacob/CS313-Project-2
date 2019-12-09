@@ -5,7 +5,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Permanent+Marker=swap"
+    rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/master.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="munchkins.js" charset="utf-8"></script>
@@ -17,19 +18,24 @@
       <header>
         <h1>Munchkin Counter</h1>
       </header>
-      <div class="box-large">
+      <div class="box-large" id="add-player-box">
         <form class="form-group" action="" method="">
-          <button type="button" id="add-player">Add Player</button>
           Name: <input type="text" name="name" id="name" value=""><br>
           Gender:<br>
-          Male: <input type="radio" name="gender" value="Male" checked><br>
-          Female: <input type="radio" name="gender" value="Female">
+          <input type="radio" name="gender" value="Male" checked> Male<br>
+          <input type="radio" name="gender" value="Female"> Female<br>
+          <button type="button" id="add-player">Add Player</button>
+          <span id="add-player-alert">Name may not be blank and must be only letters</span>
         </form>
       </div>
       <div class="box-large">
         <button type="button" name="button" id="get-players">
           Load Players</button><br>
-        <table class='table table-bordered' id="response"></table>
+        <p id="alert"> Updating... </p>
+        <br>
+        <div class="table-responsive">
+          <table class='table table-bordered' id="response"></table>
+        </div>
       </div>
       <div class="box-large">
         <a href="https://munchkin.game/site-munchkin/assets/files/1138/munchkin_rules.pdf">

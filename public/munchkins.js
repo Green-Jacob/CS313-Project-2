@@ -2,6 +2,7 @@
 Binds event handlers to the Buttons
 **/
 $(document).ready(function(){
+  $("#add-player-alert").hide();
   $.getPlayers();
   $("#get-players").click(function(){
     $.getPlayers();
@@ -51,8 +52,9 @@ retrieves rows from the database and displays it in a table
 **/
 $.getPlayers = function(){
   //$("#response").empty();
-  $("#response").html("<table class='table table-bordered'>");
+  $("#alert").show(5);
   $.getJSON("/dbConnect", function(result){
+    $("#response").html("<table class='table table-bordered'>");
     $.each(result, function(i, field){
       let lvlU = levelUpButton(field.level, field.id);
       let lvlD = levelDownButton(field.level, field.id);
@@ -63,24 +65,33 @@ $.getPlayers = function(){
       let total = (Number(field.level) + Number(field.equipment));
       //let str = lvlU + "/n" + lvlD + "/n" + equipU + "/n" + equipD + "/n" + genS;
       //console.log("Generated Buttons: " + str);
-      var resp = "<tr><td>Name: " + field.name + "</td>";
-      resp = resp + "<td>Combat Level: " + total + "</td>";
-      resp = resp + "<td>Level: " + field.level + lvlU + " " + lvlD +"</td>";
-      resp = resp + "<td>Equipment: " + field.equipment + " " + equipU + " " + equipD + "</td>";
-      resp = resp + "<td>Gender: " + field.gender + " " + genS + "</td>";
+      var resp = "<tr><td>Name:<br>" + field.name + "</td>";
+      resp = resp + "<td>Combat Level:<br>" + total + "</td>";
+      resp = resp + "<td>Level:<br>" + field.level + "<br>" + lvlU + " " +  lvlD +"</td>";
+      resp = resp + "<td>Equipment:<br>" + field.equipment + "<br>" + equipU + " " + equipD + "</td>";
+      resp = resp + "<td>Gender:<br>" + field.gender + "<br>" + genS + "</td>";
       resp = resp + "<td>" + removeP + "</td>";
       resp = resp + "</tr>";
       $("#response").append(resp);
     });
   });
   $("#response").append("</table>");
+  $("#alert").hide(650);
 };
 /**
 adds player to the database
 **/
 $.addPlayer = function(){
+  var letters = new RegExp(/^[A-Za-z]+$/);
   var i = false;
   var name = $("#name").val();
+  if (name == ""|| !(letters.test(name))) {
+    $("#add-player-alert").show();
+    return false;
+  }
+  if ($("#add-player-alert").is(":visible")) {
+    $("#add-player-alert").hide();
+  }
   console.log(name);
   var gender = $("input[type='radio'][name = 'gender']:checked").val();
   console.log(gender);
@@ -195,26 +206,26 @@ function updateGender(id, gender){
 These functions generate strings with the HTML for the various buttons
 **/
 function levelUpButton(level, id){
-  var button = "<button type='button' name='level-up' id='" + id + "' value='" + level + "'>Up</button>";
+  var button = "<button type='button' name='level-up' id='" + id + "' value='" + level + "'></button>";
   return button;
 };
 function levelDownButton(level, id) {
-  var button = "<button type='button' name='level-down' id='" + id + "' value='" + level + "'>Down</button>";
+  var button = "<button type='button' name='level-down' id='" + id + "' value='" + level + "'></button>";
   return button;
 };
 function equipUpButton(equipment, id){
-  var button = "<button type='button' name='equip-up' id='" + id + "' value='" + equipment + "'>Up</button>";
+  var button = "<button type='button' name='equip-up' id='" + id + "' value='" + equipment + "'></button>";
   return button;
 };
 function equipDownButton(equipment, id){
-  var button = "<button type='button' name='equip-down' id='" + id + "' value='" + equipment + "'>Down</button>";
+  var button = "<button type='button' name='equip-down' id='" + id + "' value='" + equipment + "'></button>";
   return button;
 };
 function genderButton(gender, id){
-  var button = "<button type='button' name='gender-swap' id='" + id + "' value='" + gender + "'>Swap</button>";
+  var button = "<button type='button' name='gender-swap' id='" + id + "' value='" + gender + "'></button>";
   return button;
 };
 function removePlayerButton(id){
-  var button = "<button type='button' name='remove' id='" + id + "'>Remove Player (double click)</button>";
+  var button = "<button type='button' name='remove' id='" + id + "'>Remove Player<span></span></button>";
   return button;
 };

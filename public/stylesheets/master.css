@@ -12,19 +12,20 @@
   align-items:center;
   width:auto;
   background-image:linear-gradient(to bottom right,#3399ff,#8399ff);
-  font-family: 'Indie Flower', cursive;/* default font for the site */
+  font-family: 'Gochi Hand', cursive;
   letter-spacing:2px;
 }
 table{
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Gochi Hand', cursive;
   font-weight: bold;
+  font-size:1.5em;
 }
 header{
   border: 3px groove #001a33;
   border-radius:5px;
   width:100%;
   text-align:center;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Permanent Marker', cursive;
   font-size:1.5em;
   text-shadow:3px 2px rgb(0, 153, 0, 0.5);
   color:#001a33;
@@ -75,6 +76,9 @@ a:hover {
 }
 a:active {
   color: blue;
+}
+td{
+  min-width:175px;
 }
 .sidebar{
   display:flex;
@@ -129,25 +133,12 @@ a:active {
 .box-large{
   display:flex;
   flex-wrap:wrap;
-  width:80%;
+  width:100%;
   background-color:rgba(202, 129, 255, 0.5);
   border: 3px groove #9999ff;
   border-radius:5px;
   padding:.3rem;
   margin:.8em;
-}
-.font-large{
-  font-size:3em;
-}
-.font-turretroad{
-  font-family: 'Turret Road', cursive;
-}
-.font-yanone{
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-  font-size:1.6rem;
-}
-.text-center{
-  text-align:center;
 }
 #logo{
   margin:.3rem;
@@ -159,4 +150,80 @@ a:active {
 }
 #green-text{
   color:green;
+}
+#alert{
+  font-size:1.5em;
+  color:red;
+}
+#get-players{
+  height:50px;
+}
+#add-player-box{
+  font-size:1.25em;
+}
+#add-player-alert{
+  color:orange;
+}
+[name='level-up']{
+  background-image:url("../images/levelUp.svg");
+  background-repeat:no-repeat;
+  background-size:contain;
+  min-width:40px;
+  min-height:40px;
+  border-radius:50%
+}
+[name='level-down']{
+  background-image:url("../images/levelDown.svg");
+  background-repeat:no-repeat;
+  background-size:contain;
+  min-width:40px;
+  min-height:40px;
+  border-radius:50%
+}
+[name='equip-up']{
+  background-image:url("../images/equipUp.svg");
+  background-repeat:no-repeat;
+  background-size:contain;
+  min-width:40px;
+  min-height:40px;
+  border-radius:50%
+}
+[name='equip-down']{
+  background-image:url("../images/equipDown.svg");
+  background-repeat:no-repeat;
+  background-size:contain;
+  min-width:40px;
+  min-height:40px;
+  border-radius:50%
+}
+[name='gender-swap']{
+  background-image:url("../images/swap.svg");
+  background-repeat:no-repeat;
+  background-size:contain;
+  min-width:40px;
+  min-height:40px;
+  border-radius:50%
+}
+[name='remove']{
+  font-size:.85em;
+  border-radius:15px;
+}
+[name='remove'] span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+[name='remove'] span:after{
+  content:none;
+  content:" Double Click";
+  position: relative;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+[name='remove']:hover span:after {
+  opacity: 1;
+  right: 0;
 }
