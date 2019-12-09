@@ -97,12 +97,12 @@ $.addPlayer = function(){
   console.log(gender);
   var url = "/addPlayer?name=" + name + "&" + "gender=" + gender;
   $.get(url, function(result){
+    $("#name").val("");
     console.log(result);
     i = Boolean(result);
     $.getPlayers();
     return i;
   });
-  //alert("Player " + name + "added. Please load players.");
 };
 /**
 Removes the player from the database using the players id
